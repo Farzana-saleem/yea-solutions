@@ -1,15 +1,23 @@
 import { Request, Response } from 'express'
 import * as authService from '../services/auth.service'
+import { success } from '../utils/responseFormat.util';
 
 export const register = async (req: Request, res: Response) => {
-    const { name, username, password, role } = req.body;
+    const { username, password } = req.body;
     const newUser = await authService.registerUser(username, password);
-    res.json(newUser);
+    return res.json(success(
+        'Registration success',
+        newUser,
+        200
+    ));
 }
 
 export const login = async (req: Request, res: Response) => {
     const { username, password } = req.body;
-    const user = authService.loginUser(username, password);
-    res.json(user);
-
+    const user = await authService.loginUser(username, password);
+    return res.json(success(
+        'Login success',
+        user,
+        200
+    ));
 }

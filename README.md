@@ -40,6 +40,8 @@ Simple DB structure with user, task tables
 
 Have created simple MVC code structure with standard basic code.
 
+Front-end : not done fully, most simple form created. more experienced in BE.
+
 ### API documentation
 
 Postman Link : https://web.postman.co/workspace/My-Workspace~69fc31f9-d466-4212-8262-1f63a4e20711/collection/41342593-7e5c4b6a-fba6-4484-9d19-3c0000151356?action=share&source=copy-link&creator=41342593
@@ -57,17 +59,11 @@ Postman Link : https://web.postman.co/workspace/My-Workspace~69fc31f9-d466-4212-
 ### Sample .env
 
 PORT=3000
-
-# Database credentials
-
 DB_HOST=localhost
 DB_USER=root
 DB_PASSWORD=pass
 DB_NAME=yea-solutions-db
 DB_PORT=3306
 DB_DIALECT=mysql
-
-# JWT token
-
 JWT_SECRET=JWT_SECRET
 JWT_EXPIRE=24h

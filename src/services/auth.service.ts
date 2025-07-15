@@ -34,7 +34,11 @@ export class AuthService {
             return error('Invalid Password', 401);
         }
 
-        const token = jwtTokenGenerator(user);
-        return { user, token };
+        const token = await jwtTokenGenerator(user);
+        return {
+            id: user.id,
+            username: user.username,
+            token
+        };
     }
 }
